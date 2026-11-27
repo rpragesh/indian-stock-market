@@ -1,0 +1,2054 @@
+{
+ "result": {
+  "content": {
+   "infosys-ltd": {
+    "shareholding_pattern": {
+     "Sep '26": {
+      "promoters": {
+       "totalPercent": 13.9,
+       "holders": [
+        {
+         "allocationPercent": 2.57,
+         "name": "Sudha Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 1.64,
+         "name": "Rohan Murty"
+        },
+        {
+         "allocationPercent": 1.1,
+         "name": "Nandan M Nilekani"
+        },
+        {
+         "allocationPercent": 1.05,
+         "name": "Akshata Murty"
+        },
+        {
+         "allocationPercent": 1.04,
+         "name": "Asha Dinesh"
+        },
+        {
+         "allocationPercent": 0.93,
+         "name": "Sudha N Murty"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Rohini Nilekani"
+        },
+        {
+         "allocationPercent": 0.87,
+         "name": "Dinesh Krishnaswamy"
+        },
+        {
+         "allocationPercent": 0.86,
+         "name": "S Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.41,
+         "name": "Narayana Murthy"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Meghana Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.34,
+         "name": "Nihar Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Shruti Shibulal"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Janhavi Nilekani"
+        },
+        {
+         "allocationPercent": 0.21,
+         "name": "Deeksha Dinesh"
+        },
+        {
+         "allocationPercent": 0.21,
+         "name": "Divya Dinesh"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Gaurav Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Milan Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Nikita Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "S D Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Kumari Shibulal"
+        },
+        {
+         "allocationPercent": 0.09,
+         "name": "Tanush Nilekani Chandra"
+        },
+        {
+         "allocationPercent": 0.04,
+         "name": "Ekagrah Rohan Murty"
+        },
+        {
+         "allocationPercent": 0.02,
+         "name": "Shray Chandra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 27.44,
+       "holders": [
+        {
+         "allocationPercent": 1.35,
+         "name": "Vanguard Emerging Markets Stock Index Fund"
+        }
+       ]
+      },
+      "dii": {
+       "totalPercent": 38.98,
+       "holders": [
+        {
+         "allocationPercent": 11.8,
+         "name": "Life Insurance Corporation Of India - Ulif00220091"
+        },
+        {
+         "allocationPercent": 4.51,
+         "name": "Sbi Mutual Fund"
+        },
+        {
+         "allocationPercent": 3.95,
+         "name": "Icici Prudential Mutual Fund"
+        },
+        {
+         "allocationPercent": 3.38,
+         "name": "National Pension System Trust"
+        },
+        {
+         "allocationPercent": 2.65,
+         "name": "Nippon Life India Trustee"
+        },
+        {
+         "allocationPercent": 1.93,
+         "name": "Uti Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.71,
+         "name": "Hdfc Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.27,
+         "name": "Sbi Life Insurance Co. Ltd"
+        },
+        {
+         "allocationPercent": 1.17,
+         "name": "Parag Parikh Mutual Fund"
+        }
+       ]
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 19.68,
+       "holders": []
+      }
+     },
+     "Jun '26": {
+      "promoters": {
+       "totalPercent": 13.82,
+       "holders": [
+        {
+         "allocationPercent": 2.55,
+         "name": "Sudha Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 1.63,
+         "name": "Rohan Murty"
+        },
+        {
+         "allocationPercent": 1.09,
+         "name": "Nandan M Nilekani"
+        },
+        {
+         "allocationPercent": 1.04,
+         "name": "Akshata Murty"
+        },
+        {
+         "allocationPercent": 1.03,
+         "name": "Asha Dinesh"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Rohini Nilekani"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Sudha N Murty"
+        },
+        {
+         "allocationPercent": 0.87,
+         "name": "Dinesh Krishnaswamy"
+        },
+        {
+         "allocationPercent": 0.85,
+         "name": "S Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Meghana Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Narayana Murthy"
+        },
+        {
+         "allocationPercent": 0.34,
+         "name": "Nihar Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Shruti Shibulal"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Janhavi Nilekani"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Deeksha Dinesh"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Divya Dinesh"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Milan Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Nikita Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.15,
+         "name": "Gaurav Manchanda"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "S D Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Kumari Shibulal"
+        },
+        {
+         "allocationPercent": 0.09,
+         "name": "Tanush Nilekani Chandra"
+        },
+        {
+         "allocationPercent": 0.04,
+         "name": "Ekagrah Rohan Murty"
+        },
+        {
+         "allocationPercent": 0.02,
+         "name": "Shray Chandra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 27.09,
+       "holders": [
+        {
+         "allocationPercent": 1.33,
+         "name": "Vanguard Total International Stock Index Fund"
+        },
+        {
+         "allocationPercent": 1.26,
+         "name": "Vanguard Emerging Markets Stock Index Fund"
+        }
+       ]
+      },
+      "dii": {
+       "totalPercent": 42.96,
+       "holders": [
+        {
+         "allocationPercent": 11.73,
+         "name": "Life Insurance Corporation Of India - Ulif00220091"
+        },
+        {
+         "allocationPercent": 4.92,
+         "name": "Icici Prudential Mutual Fund"
+        },
+        {
+         "allocationPercent": 4.37,
+         "name": "Sbi Mutual Fund"
+        },
+        {
+         "allocationPercent": 3.2,
+         "name": "National Pension System Trust"
+        },
+        {
+         "allocationPercent": 2.2,
+         "name": "Nippon Life India Trustee"
+        },
+        {
+         "allocationPercent": 1.89,
+         "name": "Hdfc Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.73,
+         "name": "Uti Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.31,
+         "name": "Sbi Life Insurance Co. Ltd"
+        },
+        {
+         "allocationPercent": 1.13,
+         "name": "Parag Parikh Mutual Fund"
+        }
+       ]
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 16.13,
+       "holders": []
+      }
+     },
+     "Mar '26": {
+      "promoters": {
+       "totalPercent": 14.38,
+       "holders": [
+        {
+         "allocationPercent": 2.54,
+         "name": "Sudha Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 1.62,
+         "name": "Rohan Murty"
+        },
+        {
+         "allocationPercent": 1.09,
+         "name": "Nandan M Nilekani"
+        },
+        {
+         "allocationPercent": 1.04,
+         "name": "Akshata Murty"
+        },
+        {
+         "allocationPercent": 1.03,
+         "name": "Asha Dinesh"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Sudha N Murty"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Rohini Nilekani"
+        },
+        {
+         "allocationPercent": 0.87,
+         "name": "Dinesh Krishnaswamy"
+        },
+        {
+         "allocationPercent": 0.85,
+         "name": "S Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.48,
+         "name": "Shreyas Shibulal"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Meghana Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Narayana Murthy"
+        },
+        {
+         "allocationPercent": 0.34,
+         "name": "Nihar Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Janhavi Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Shruti Shibulal"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Deeksha Dinesh"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Divya Dinesh"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Milan Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Nikita Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.15,
+         "name": "Gaurav Manchanda"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "S D Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Kumari Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Bhairavi Madhusudhan Shibulal"
+        },
+        {
+         "allocationPercent": 0.09,
+         "name": "Tanush Nilekani Chandra"
+        },
+        {
+         "allocationPercent": 0.04,
+         "name": "Ekagrah Rohan Murty"
+        },
+        {
+         "allocationPercent": 0.02,
+         "name": "Shray Chandra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 28.45,
+       "holders": [
+        {
+         "allocationPercent": 1.34,
+         "name": "Vanguard Total International Stock Index Fund"
+        },
+        {
+         "allocationPercent": 1.27,
+         "name": "Vanguard Emerging Markets Stock Index Fund"
+        }
+       ]
+      },
+      "dii": {
+       "totalPercent": 43.38,
+       "holders": [
+        {
+         "allocationPercent": 11.54,
+         "name": "Life Insurance Corporation Of India - Ulif00220091"
+        },
+        {
+         "allocationPercent": 4.74,
+         "name": "Icici Prudential Mutual Fund"
+        },
+        {
+         "allocationPercent": 4.66,
+         "name": "Sbi Mutual Fund"
+        },
+        {
+         "allocationPercent": 2.99,
+         "name": "National Pension System Trust"
+        },
+        {
+         "allocationPercent": 2.24,
+         "name": "Nippon Life India Trustee"
+        },
+        {
+         "allocationPercent": 2.04,
+         "name": "Hdfc Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.77,
+         "name": "Uti Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.41,
+         "name": "Sbi Life Insurance Co. Ltd"
+        },
+        {
+         "allocationPercent": 1.1,
+         "name": "Aditya Birla Sun Life Mutual Fund"
+        }
+       ]
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 13.78,
+       "holders": []
+      }
+     },
+     "Dec '25": {
+      "promoters": {
+       "totalPercent": 14.52,
+       "holders": [
+        {
+         "allocationPercent": 2.57,
+         "name": "Sudha Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 1.64,
+         "name": "Rohan Murty"
+        },
+        {
+         "allocationPercent": 1.1,
+         "name": "Nandan M Nilekani"
+        },
+        {
+         "allocationPercent": 1.05,
+         "name": "Akshata Murty"
+        },
+        {
+         "allocationPercent": 1.04,
+         "name": "Asha Dinesh"
+        },
+        {
+         "allocationPercent": 0.93,
+         "name": "Sudha N Murty"
+        },
+        {
+         "allocationPercent": 0.92,
+         "name": "Rohini Nilekani"
+        },
+        {
+         "allocationPercent": 0.87,
+         "name": "Dinesh Krishnaswamy"
+        },
+        {
+         "allocationPercent": 0.86,
+         "name": "S Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.48,
+         "name": "Shreyas Shibulal"
+        },
+        {
+         "allocationPercent": 0.41,
+         "name": "Narayana Murthy"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Meghana Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.34,
+         "name": "Nihar Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Janhavi Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Shruti Shibulal"
+        },
+        {
+         "allocationPercent": 0.21,
+         "name": "Deeksha Dinesh"
+        },
+        {
+         "allocationPercent": 0.21,
+         "name": "Divya Dinesh"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Gaurav Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Milan Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Nikita Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "S D Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Kumari Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Bhairavi Madhusudhan Shibulal"
+        },
+        {
+         "allocationPercent": 0.09,
+         "name": "Tanush Nilekani Chandra"
+        },
+        {
+         "allocationPercent": 0.04,
+         "name": "Ekagrah Rohan Murty"
+        },
+        {
+         "allocationPercent": 0.02,
+         "name": "Shray Chandra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 30.26,
+       "holders": [
+        {
+         "allocationPercent": 1.38,
+         "name": "Vanguard Total International Stock Index Fund"
+        },
+        {
+         "allocationPercent": 1.28,
+         "name": "Vanguard Emerging Markets Stock Index Fund"
+        }
+       ]
+      },
+      "dii": {
+       "totalPercent": 41.27,
+       "holders": [
+        {
+         "allocationPercent": 11.28,
+         "name": "Life Insurance Corporation Of India - Ulif00220091"
+        },
+        {
+         "allocationPercent": 4.66,
+         "name": "Sbi Mutual Fund"
+        },
+        {
+         "allocationPercent": 4.11,
+         "name": "Icici Prudential Mutual Fund"
+        },
+        {
+         "allocationPercent": 2.69,
+         "name": "National Pension System Trust"
+        },
+        {
+         "allocationPercent": 1.86,
+         "name": "Hdfc Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.81,
+         "name": "Uti Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.77,
+         "name": "Nippon Life India Trustee"
+        },
+        {
+         "allocationPercent": 1.35,
+         "name": "Sbi Life Insurance Co. Ltd"
+        }
+       ]
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 13.95,
+       "holders": []
+      }
+     },
+     "Sep '25": {
+      "promoters": {
+       "totalPercent": 14.3,
+       "holders": [
+        {
+         "allocationPercent": 2.52,
+         "name": "Sudha Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 1.6,
+         "name": "Rohan Murty"
+        },
+        {
+         "allocationPercent": 1.08,
+         "name": "Nandan M Nilekani"
+        },
+        {
+         "allocationPercent": 1.03,
+         "name": "Akshata Murty"
+        },
+        {
+         "allocationPercent": 1.02,
+         "name": "Asha Dinesh"
+        },
+        {
+         "allocationPercent": 0.91,
+         "name": "Sudha N Murty"
+        },
+        {
+         "allocationPercent": 0.91,
+         "name": "Rohini Nilekani"
+        },
+        {
+         "allocationPercent": 0.86,
+         "name": "Dinesh Krishnaswamy"
+        },
+        {
+         "allocationPercent": 0.84,
+         "name": "S Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.53,
+         "name": "Shreyas Shibulal"
+        },
+        {
+         "allocationPercent": 0.4,
+         "name": "Narayana Murthy"
+        },
+        {
+         "allocationPercent": 0.39,
+         "name": "Meghana Gopalakrishnan"
+        },
+        {
+         "allocationPercent": 0.33,
+         "name": "Nihar Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Janhavi Nilekani"
+        },
+        {
+         "allocationPercent": 0.23,
+         "name": "Shruti Shibulal"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Divya Dinesh"
+        },
+        {
+         "allocationPercent": 0.2,
+         "name": "Deeksha Dinesh"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Milan Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.16,
+         "name": "Nikita Shibulal Manchanda"
+        },
+        {
+         "allocationPercent": 0.15,
+         "name": "Gaurav Manchanda"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "S D Shibulal"
+        },
+        {
+         "allocationPercent": 0.14,
+         "name": "Bhairavi Madhusudhan Shibulal"
+        },
+        {
+         "allocationPercent": 0.13,
+         "name": "Kumari Shibulal"
+        },
+        {
+         "allocationPercent": 0.09,
+         "name": "Tanush Nilekani Chandra"
+        },
+        {
+         "allocationPercent": 0.04,
+         "name": "Ekagrah Rohan Murty"
+        },
+        {
+         "allocationPercent": 0.02,
+         "name": "Shray Chandra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 30.07,
+       "holders": [
+        {
+         "allocationPercent": 1.35,
+         "name": "Vanguard Total International Stock Index Fund"
+        },
+        {
+         "allocationPercent": 1.23,
+         "name": "Vanguard Emerging Markets Stock Index Fund"
+        },
+        {
+         "allocationPercent": 0.01,
+         "name": "Foreign Institutional Investors"
+        }
+       ]
+      },
+      "dii": {
+       "totalPercent": 41.65,
+       "holders": [
+        {
+         "allocationPercent": 10.89,
+         "name": "Life Insurance Corporation Of India - Ulif00220091"
+        },
+        {
+         "allocationPercent": 4.54,
+         "name": "Sbi Mutual Fund"
+        },
+        {
+         "allocationPercent": 4.53,
+         "name": "Icici Prudential Mutual Fund"
+        },
+        {
+         "allocationPercent": 2.35,
+         "name": "National Pension System Trust"
+        },
+        {
+         "allocationPercent": 1.88,
+         "name": "Uti Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.81,
+         "name": "Hdfc Mutual Fund"
+        },
+        {
+         "allocationPercent": 1.8,
+         "name": "Nippon Life India Trustee"
+        },
+        {
+         "allocationPercent": 1.38,
+         "name": "Sbi Life Insurance Co. Ltd"
+        },
+        {
+         "allocationPercent": 1.11,
+         "name": "Aditya Birla Sun Life Mutual Fund"
+        }
+       ]
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 13.97,
+       "holders": []
+      }
+     }
+    }
+   },
+   "hcl-infosystems-ltd": {
+    "shareholding_pattern": {
+     "Sep '26": {
+      "promoters": {
+       "totalPercent": 62.89,
+       "holders": [
+        {
+         "allocationPercent": 49.94,
+         "name": "Hcl Corporation Private Limited"
+        },
+        {
+         "allocationPercent": 12.94,
+         "name": "Vama Sundari Investments (delhi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Universal Office Automation Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "International Data Management Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Technologies Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (delhi) Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl It City Lucknow Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Krn Education Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Avitas Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (pondi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Julian Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Blueberry Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guddu Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Healthcare Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiranroshni Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shivkiran Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Investments (pondi) Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vidyagyan Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Esthetic Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Buoyant Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Cityframe Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Dhrtvan Business Accelerations Pvt Ltd (formerly Known As Sprire Infra Developers Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Saola Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Grotto Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Capital Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Incubation Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Games Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Sterna Private Limited (formerly Known As Hcl Cortech Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guvi Geek Network Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Edu Voyage Education Private Limited (formerly Known As Hdfc Education And Development Services Priv"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hudson Engineering & Technology Solutions Limited (formerly Known As Hcl Infosolutions Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "First Stonex Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ecstatic Employees Care & Support Limited(formerly Known As Hcl Employees Investment Co. Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "South Asian Computers Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "India Chip Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar Museum Of Art"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vamasundari Scholarship Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "The Habitats Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Institution Of Eminence Deemed To Be University"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Prudential Hcl Health Insurance Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Anantya Sakti Inc"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Roshni Nadar Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shikhar Neelkamal Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Armaaan Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Jahaan Malhotra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 0.04,
+       "holders": []
+      },
+      "dii": {
+       "totalPercent": 0.05,
+       "holders": []
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 37.03,
+       "holders": []
+      }
+     },
+     "Jun '26": {
+      "promoters": {
+       "totalPercent": 62.89,
+       "holders": [
+        {
+         "allocationPercent": 49.94,
+         "name": "Hcl Corporation Private Limited"
+        },
+        {
+         "allocationPercent": 12.94,
+         "name": "Vama Sundari Investments (delhi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Universal Office Automation Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "International Data Management Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Technologies Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (delhi) Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl It City Lucknow Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Krn Education Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Avitas Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (pondi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Julian Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Blueberry Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guddu Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Healthcare Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiranroshni Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shivkiran Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Investments (pondi) Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vidyagyan Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Esthetic Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Buoyant Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Cityframe Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Dhrtvan Business Accelerations Pvt Ltd (formerly Known As Sprire Infra Developers Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Saola Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Grotto Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Capital Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Incubation Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Games Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Sterna Private Limited (formerly Known As Hcl Cortech Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guvi Geek Network Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "School Style Supplies Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Edu Voyage Education Private Limited (formerly Known As Hdfc Education And Development Services Priv"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hudson Engineering & Technology Solutions Limited (formerly Known As Hcl Infosolutions Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "First Stonex Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ecstatic Employees Care & Support Limited(formerly Known As Hcl Employees Investment Co. Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "South Asian Computers Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "India Chip Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar Museum Of Art"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vamasundari Scholarship Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "The Habitats Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Institution Of Eminence Deemed To Be University"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Prudential Hcl Health Insurance Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Anantya Sakti Inc"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Roshni Nadar Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shikhar Neelkamal Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Armaaan Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Jahaan Malhotra"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "dii": {
+       "totalPercent": 0.05,
+       "holders": []
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 37.06,
+       "holders": []
+      }
+     },
+     "Mar '26": {
+      "promoters": {
+       "totalPercent": 62.89,
+       "holders": [
+        {
+         "allocationPercent": 49.94,
+         "name": "Hcl Corporation Private Limited"
+        },
+        {
+         "allocationPercent": 12.94,
+         "name": "Vama Sundari Investments (delhi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Universal Office Automation Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "International Data Management Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Technologies Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (delhi) Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl It City Lucknow Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Krn Education Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Avitas Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (pondi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Julian Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Blueberry Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guddu Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Roshni Nadar Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shikhar Neelkamal Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Armaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Jahaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Healthcare Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiranroshni Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shivkiran Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Investments (pondi) Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vidyagyan Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Esthetic Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Buoyant Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Cityframe Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Dhrtvan Business Accelerations Pvt Ltd (formerly Known As Sprire Infra Developers Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Saola Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Grotto Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Capital Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Incubation Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Games Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Sterna Private Limited (formerly Known As Hcl Cortech Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guvi Geek Network Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "School Style Supplies Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Edu Voyage Education Private Limited (formerly Known As Hdfc Education And Development Services Priv"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hudson Engineering & Technology Solutions Limited (formerly Known As Hcl Infosolutions Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "First Stonex Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ecstatic Employees Care & Support Limited(formerly Known As Hcl Employees Investment Co. Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "South Asian Computers Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "India Chip Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar Museum Of Art"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vamasundari Scholarship Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "The Habitats Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Institution Of Eminence Deemed To Be University"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Prudential Hcl Health Insurance Limited"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "dii": {
+       "totalPercent": 0.05,
+       "holders": []
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 37.06,
+       "holders": []
+      }
+     },
+     "Dec '25": {
+      "promoters": {
+       "totalPercent": 62.89,
+       "holders": [
+        {
+         "allocationPercent": 49.94,
+         "name": "Hcl Corporation Private Limited"
+        },
+        {
+         "allocationPercent": 12.94,
+         "name": "Vama Sundari Investments (delhi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Armaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Jahaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Technologies Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (delhi) Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Universal Office Automation Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "International Data Management Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Roshni Nadar Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shikhar Neelkamal Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guddu Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Julian Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Blueberry Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Avitas Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (pondi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl It City Lucknow Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Krn Education Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Institution Of Eminence Deemed To Be University"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Prudential Hcl Health Insurance Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vamasundari Scholarship Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "The Habitats Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar Museum Of Art"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "South Asian Computers Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "India Chip Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "First Stonex Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ecstatic Employees Care & Support Limited(formerly Known As Hcl Employees Investment Co. Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Edu Voyage Education Private Limited (formerly Known As Hdfc Education And Development Services Priv"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hudson Engineering & Technology Solutions Limited (formerly Known As Hcl Infosolutions Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guvi Geek Network Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "School Style Supplies Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Games Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Sterna Private Limited (formerly Known As Hcl Cortech Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Capital Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Incubation Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Saola Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Grotto Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Cityframe Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Dhrtvan Business Accelerations Pvt Ltd (formerly Known As Sprire Infra Developers Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Esthetic Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Buoyant Infra - Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vidyagyan Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shivkiran Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Investments (pondi) Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Healthcare Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiranroshni Investments (chennai) Private Limited"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 0.04,
+       "holders": []
+      },
+      "dii": {
+       "totalPercent": 0.05,
+       "holders": []
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 37.03,
+       "holders": []
+      }
+     },
+     "Sep '25": {
+      "promoters": {
+       "totalPercent": 62.89,
+       "holders": [
+        {
+         "allocationPercent": 49.94,
+         "name": "Hcl Corporation Private Limited"
+        },
+        {
+         "allocationPercent": 12.94,
+         "name": "Vama Sundari Investments (delhi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Universal Office Automation Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Jahaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Technologies Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "International Data Management Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (delhi) Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Master Armaan Malhotra (minor)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shikhar Neelkamal Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Roshni Nadar Malhotra"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Avitas Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Krn Education Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl It City Lucknow Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (pondi) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Blueberry Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Julian Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guddu Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Healthcare Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiranroshni Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vama Sundari Investments (pondi) Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shivkiran Investments (chennai) Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Slocum Education"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vidyagyan Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Cityframe Infra -\u00c7\u00f4 Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Buoyant Infra -\u00c7\u00f4 Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Esthetic Infra -\u00c7\u00f4 Developers Pvt Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Dhrtvan Business Accelerations Pvt Ltd (formerly Known As Sprire Infra Developers Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Grotto Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Saola Infra Developers Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Capital Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Incubation Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Guvi Geek Network Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Sterna Private Limited (formerly Known As Hcl Cortech Private Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hcl Games Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "School Style Supplies Pvt Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Hudson Engineering & Technology Solutions Limited (formerly Known As Hcl Infosolutions Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Edu Voyage Education Private Limited (formerly Known As Hdfc Education And Development Services Priv"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "First Stonex Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ecstatic Employees Care & Support Limited(formerly Known As Hcl Employees Investment Co. Limited)"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Foundation"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "India Chip Private Limited"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "South Asian Computers Ltd"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Ssn Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Kiran Nadar Museum Of Art"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Vamasundari Scholarship Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "The Habitats Trust"
+        },
+        {
+         "allocationPercent": 0.0,
+         "name": "Shiv Nadar Institution Of Eminence Deemed To Be University"
+        }
+       ]
+      },
+      "fii": {
+       "totalPercent": 0.04,
+       "holders": []
+      },
+      "dii": {
+       "totalPercent": 0.05,
+       "holders": []
+      },
+      "others": {
+       "totalPercent": 0.0,
+       "holders": []
+      },
+      "public": {
+       "totalPercent": 37.03,
+       "holders": []
+      }
+     }
+    }
+   }
+  }
+ }
+}

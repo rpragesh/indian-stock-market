@@ -47,5 +47,10 @@
     "INFY": "Infosys Limited",
     "RELIANCE": "Reliance Industries Limited",
     "HDFCBANK": "HDFC Bank Limited"
+  },
+  "bse_codes": {
+    "INFY": "500209",
+    "RELIANCE": "500325",
+    "HDFCBANK": "500180"
   }
 }

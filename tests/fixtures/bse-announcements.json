@@ -1,0 +1,52 @@
+{
+ "Table": [
+  {
+   "NEWSID": "t1",
+   "SCRIP_CD": 500209,
+   "XML_NAME": "ANN_500209_T1",
+   "NEWSSUB": "Infosys Ltd - 500209 - Announcement under Regulation 30 (LODR)-Award_of_Order_Receipt_of_Order",
+   "DT_TM": "2026-11-27T16:05:12.1",
+   "NEWS_DT": "2026-11-27T16:05:12.1",
+   "CRITICALNEWS": 0,
+   "ANNOUNCEMENT_TYPE": "A",
+   "ATTACHMENTNAME": "test-1.pdf",
+   "MORE": "",
+   "HEADLINE": "Infosys has been awarded an order by a European bank",
+   "CATEGORYNAME": "Company Update",
+   "NSURL": "https://www.bseindia.com/stock-share-price/infosys-ltd/infy/500209/",
+   "SLONGNAME": "Infosys Ltd",
+   "TotalPageCnt": 1,
+   "SUBCATNAME": "Award of Order / Receipt of Order"
+  },
+  {
+   "NEWSID": "t2",
+   "SCRIP_CD": 500325,
+   "NEWSSUB": "Reliance Industries Ltd - 500325 - Clarification sought on spurt in volume",
+   "NEWS_DT": "2026-11-27T13:30:00",
+   "ATTACHMENTNAME": "",
+   "HEADLINE": "",
+   "CATEGORYNAME": "Company Update",
+   "NSURL": "https://www.bseindia.com/stock-share-price/reliance-industries-ltd/reliance/500325/",
+   "SLONGNAME": "Reliance Industries Ltd",
+   "TotalPageCnt": 1,
+   "SUBCATNAME": "Clarification - Volume Movement"
+  },
+  {
+   "NEWSID": "t3",
+   "SCRIP_CD": 517397,
+   "NEWSSUB": "PAN ELECTRONICS INDIA LTD. - 517397 - Compliances-Reg. 39 (3) - Details of Loss of Certificate / Duplicate Certificate",
+   "NEWS_DT": "2026-11-27T11:44:22.95",
+   "ATTACHMENTNAME": "aab502e1-3e05-4fdc-bc10-ecbb436cab8d.pdf",
+   "HEADLINE": "Issuance of duplicate share certificate in lieu of loss of original share certificate.",
+   "CATEGORYNAME": null,
+   "SLONGNAME": "PAN ELECTRONICS INDIA LTD.",
+   "TotalPageCnt": 1,
+   "SUBCATNAME": "Reg. 39 (3) - Details of Loss of Certificate / Duplicate Certificate"
+  }
+ ],
+ "Table1": [
+  {
+   "ROWCNT": 3
+  }
+ ]
+}

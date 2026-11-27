@@ -20,7 +20,8 @@ import nselib  # noqa: E402
 FX = os.path.join(ROOT, "tests", "fixtures")
 ANN = os.path.join(FX, "nse-announcements.xml")
 FUND = os.path.join(FX, "groww-fundamentals-INFY.json")
-BULK, BLOCK, IT = (os.path.join(FX, f) for f in ("nse-bulk.csv", "nse-block.csv", "nse-insider.xml"))
+BULK, BLOCK, PIT, HOLD, BSE = (os.path.join(FX, f) for f in (
+    "nse-bulk.csv", "nse-block.csv", "nse-pit.json", "groww-shareholding-INFY.json", "bse-announcements.json"))
 WATCH = {"INFY": "Infosys Limited", "RELIANCE": "Reliance Industries Limited", "HDFCBANK": "HDFC Bank Limited"}
 
 
@@ -94,9 +95,31 @@ class News(WithNse):
         self.assertTrue(all(r["impact"] == "high" for r in rows))
 
     def test_cli(self):
-        code, out = run(nw, "--file", ANN, "--now", "2026-11-27 18:00", "--hours", "48")
+        code, out = run(nw, "--file", ANN, "--now", "2026-11-27 18:00", "--hours", "48", "--exchange", "nse")
         self.assertEqual(code, 0)
         self.assertIn("Not financial advice", out)
+
+    def test_bse_items(self):
+        items = nw.bse_items(json.loads(read(BSE)))
+        self.assertEqual(items[0]["company"], "Infosys Ltd")
+        self.assertEqual(items[0]["link"], "https://www.bseindia.com/xml-data/corpfiling/AttachLive/test-1.pdf")
+        self.assertEqual(items[1]["subject"], "Clarification sought on spurt in volume")  # no headline: from NEWSSUB
+        self.assertEqual(items[1]["link"], "https://www.bseindia.com/stock-share-price/reliance-industries-ltd/reliance/500325/")
+
+    def test_nse_and_bse_together(self):
+        bse = nw.bse_items(json.loads(read(BSE)))
+        rows = nw.run(read(ANN), list(WATCH.values()), dt.datetime(2026, 11, 27, 18, 0), hours=24, bse=bse)
+        by = {(r["exchange"], r["company"]): r for r in rows}
+        self.assertEqual(by[("BSE", "Infosys Ltd")]["tag"], "order win")
+        self.assertNotIn(("BSE", "PAN ELECTRONICS INDIA LTD."), by)
+        # Reliance's volume query is on both exchanges with the same subject: shown once
+        self.assertEqual(sum(1 for r in rows if r["company"].startswith("Reliance") and r["tag"] == "exchange query"), 1)
+
+    def test_cli_bse_file(self):
+        code, out = run(nw, "--exchange", "bse", "--bse-file", BSE, "--now", "2026-11-27 18:00")
+        self.assertEqual(code, 0)
+        self.assertIn("BSE", out)
+        self.assertIn("awarded an order", out)
 
 
 class Results(WithNse):
@@ -150,25 +173,61 @@ class Insider(WithNse):
         s = ins.summarise(self.deals())
         self.assertEqual([x["symbol"] for x in s], ["INFY", "HDFCBANK", "SMALLCO"])
 
-    def test_insider_feed_stale_and_exact_names(self):
-        text = read(IT)
-        items, newest, stale = ins.insider_items(text, list(WATCH.values()), dt.datetime(2026, 11, 27, 18), days=400)
-        self.assertEqual([i["company"] for i in items], ["Infosys Limited", "Reliance Industries Limited"])
-        self.assertEqual(newest, "2026-05-02")
-        self.assertTrue(stale)
-        _, _, stale = ins.insider_items(text, [], dt.datetime(2026, 5, 3, 9), days=30)
-        self.assertFalse(stale)
+    def test_pit_both_lists(self):
+        rows = ins.parse_pit(json.loads(read(PIT)))
+        self.assertEqual(len(rows), 5)
+        old = [r for r in rows if r["person"] == "Example Promoter"][0]
+        self.assertEqual((old["side"], old["qty"], old["value"]), ("SELL", 100000, 117000000))
+        new = rows[0]
+        self.assertIsNone(new["person"])
+        self.assertTrue(new["link"].startswith("https://"))
+        self.assertIsNone([r for r in rows if r["person"] == "Example Director"][0]["link"])  # "-" is no link
+
+    def test_pit_summary_window_and_promoter_net(self):
+        rows = ins.parse_pit(json.loads(read(PIT)))
+        s = {x["symbol"]: x for x in ins.pit_summary(rows, ["INFY"], dt.datetime(2026, 4, 1))}
+        self.assertEqual(list(s), ["INFY"])
+        self.assertEqual(len(s["INFY"]["filings"]), 3)
+        self.assertAlmostEqual(s["INFY"]["promoter_net"], -117000000)
+        s = ins.pit_summary(rows, ["INFY"], dt.datetime(2026, 10, 28))
+        self.assertEqual(len(s[0]["filings"]), 1)
+
+    def test_holding_changes_real_groww(self):
+        sp, key = feeds.groww_pick(json.loads(read(HOLD)), "shareholding_pattern", "INFY", "Infosys Limited")
+        self.assertEqual(key, "infosys-ltd")
+        h = ins.holding_changes(sp)
+        self.assertEqual((h["quarter"], h["prev_quarter"], h["year_ago_quarter"]), ("Sep '26", "Jun '26", "Sep '25"))
+        g = {x["group"]: x for x in h["groups"]}
+        self.assertEqual(g["promoters"]["latest"], 13.9)
+        self.assertEqual(g["promoters"]["qoq_pp"], 0.08)
+        self.assertEqual(g["dii"]["qoq_pp"], -3.98)
+        self.assertIn("DII holding moved -3.98 pp last quarter", h["flags"])
+
+    def test_holding_a_promoter_leaving(self):
+        sp, _ = feeds.groww_pick(json.loads(read(HOLD)), "shareholding_pattern", "INFY", "Infosys Limited")
+        h = ins.holding_changes({q: sp[q] for q in ("Mar '26", "Jun '26")})
+        gone = [m for m in h["promoter_moves"] if m["name"] == "Shreyas Shibulal"]
+        self.assertEqual(gone[0]["note"], "no longer listed as a promoter holder")
 
     def test_cli(self):
-        code, out = run(ins, "--bulk-file", BULK, "--block-file", BLOCK, "--insider-file", IT,
-                        "--now", "2026-11-27 18:00")
+        code, out = run(ins, "--bulk-file", BULK, "--block-file", BLOCK, "--insider-file", PIT,
+                        "--now", "2026-11-27 18:00", "--holding", "--symbols", "INFY,HDFCBANK", "--holding-file", HOLD)
         self.assertEqual(code, 0)
         self.assertIn("both sides", out)
-        self.assertIn("stale", out)
+        self.assertIn("who and how much are in the filing", out)
+        self.assertIn("No shareholding saved for INFY", out)  # --holding-file only with a single symbol
         self.assertNotIn("SMALLCO", out)
         self.assertIn("Not financial advice", out)
+        code, out = run(ins, "--symbols", "INFY", "--no-deals", "--insider-file", PIT, "--now", "2026-11-27 18:00",
+                        "--holding", "--holding-file", HOLD)
+        self.assertIn("Shareholding of INFY, Sep '26", out)
         code, out = run(ins, "--all", "--bulk-file", BULK, "--block-file", BLOCK, "--no-insider", "--json")
         self.assertEqual(json.loads(out)["deals"][2]["symbol"], "SMALLCO")
+
+    def test_bad_insider_file_is_a_note(self):
+        code, out = run(ins, "--no-deals", "--insider-file", BULK)
+        self.assertEqual(code, 1)
+        self.assertIn("Could not read NSE's insider-trading lists", out)
 
 
 if __name__ == "__main__":
