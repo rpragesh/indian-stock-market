@@ -38,17 +38,7 @@ def qkey(label):
 
 def pick_company(data, symbol, name=None):
     """The one company's financialStatement out of whatever shape was saved."""
-    if "financialStatement" in data:
-        return data["financialStatement"], symbol
-    content = data.get("result", data).get("content", data.get("result", data))
-    keys = [k for k, v in content.items() if isinstance(v, dict) and "financialStatement" in v]
-    if not keys:
-        raise ValueError("no financialStatement found in the saved file")
-    want = [feeds.norm_name(x) for x in (name, symbol) if x]
-    for k in keys:
-        if feeds.norm_name(k.replace("-", " ").replace(" ltd", "")) in want:
-            return content[k]["financialStatement"], k
-    return content[keys[0]]["financialStatement"], keys[0]
+    return feeds.groww_pick(data, "financialStatement", symbol, name)
 
 
 def chg(a, b):

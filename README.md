@@ -61,9 +61,9 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | `nse-entry` | Watches a setup bar by bar | ready |
 | `nse-timemachine` | Replays the trade 10,000 times from recent candles | ready |
 | `nse-alerts` | Price, stop, target and square-off reminders | ready |
-| `nse-news` | NSE corporate announcements for your watchlist, tagged by impact | ready |
+| `nse-news` | NSE and BSE corporate announcements for your watchlist, tagged by impact | ready |
 | `nse-results` | Quarterly results: what changed QoQ and YoY | ready |
-| `nse-insider` | Bulk and block deals, plus promoter and insider trades (SEBI PIT disclosures) | ready |
+| `nse-insider` | Bulk and block deals, insider trades (SEBI PIT) and shareholding changes | ready |
 
 ## A paper trade, start to finish
 
@@ -96,14 +96,17 @@ python3 nse-alerts/alerts.py check --ltp INFY=1171.5         # stop, target, fla
 ## Research before a trade
 
 ```bash
-python3 nse-news/news.py                     # today's NSE filings for your watchlist, high impact first
-python3 nse-results/results.py --symbol INFY # the latest quarter vs last quarter and last year
-python3 nse-insider/insider.py               # bulk, block and insider deals in your watchlist
+python3 nse-news/news.py                        # today's NSE and BSE filings for your watchlist, high impact first
+python3 nse-results/results.py --symbol INFY    # the latest quarter vs last quarter and last year
+python3 nse-insider/insider.py --holding        # bulk, block and insider deals, and who changed their stake
 ```
 
-News and deals come from NSE's public archive files. Results come from the
-Groww connector, which Claude fetches and saves to `nse/results/`. Your
-watchlist is `"watchlist"` in `nse/config.json`. BSE filings are not read yet.
+News, deals and insider filings come from NSE's and BSE's websites. Some of
+that is the data their own pages load rather than an official API, so it
+can break when they change their sites; each tool says so and takes a saved
+copy instead. Results and shareholding come from the Groww connector, which
+Claude fetches and saves under `nse/`. Your watchlist is `"watchlist"` in
+`nse/config.json`.
 
 ## Try the base layer
 

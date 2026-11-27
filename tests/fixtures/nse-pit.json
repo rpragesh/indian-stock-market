@@ -1,0 +1,7 @@
+{"data": [
+ {"symbol": "INFY", "companyName": "Infosys Limited", "regulation": "7(2)", "typeOfSubmission": "Original", "revisionRemark": "-", "broadcastDateTime": "20-Nov-2026 18:02:11", "ixbrl": "https://nsearchives.nseindia.com/corporate/xbrl/PIT_TEST_1.html"},
+ {"symbol": "RELIANCE", "companyName": "Reliance Industries Limited", "regulation": "7(2)", "typeOfSubmission": "Original", "revisionRemark": "-", "broadcastDateTime": "18-Nov-2026 11:40:00", "ixbrl": "https://nsearchives.nseindia.com/corporate/xbrl/PIT_TEST_2.html"},
+ {"symbol": "INFY", "company": "Infosys Limited", "acqName": "Example Promoter", "personCategory": "Promoter Group", "secType": "Equity Shares", "secAcq": "100000", "secVal": "117000000", "tdpTransactionType": "Sell", "acqMode": "Market Sale", "befAcqSharesPer": "0.50", "afterAcqSharesPer": "0.48", "intimDt": "02-May-2026 18:10", "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/IT_TEST_3.xml"},
+ {"symbol": "INFY", "company": "Infosys Limited", "acqName": "Example Director", "personCategory": "Director", "secType": "Equity Shares", "secAcq": "2000", "secVal": "2300000", "tdpTransactionType": "Buy", "acqMode": "Market Purchase", "befAcqSharesPer": "0.00", "afterAcqSharesPer": "0.00", "intimDt": "30-Apr-2026 10:00", "xbrl": "-"},
+ {"symbol": "SMALLCO", "companyName": "Small Company Limited", "regulation": "7(2)", "typeOfSubmission": "Original", "broadcastDateTime": "21-Nov-2026 09:00:00", "ixbrl": "https://nsearchives.nseindia.com/corporate/xbrl/PIT_TEST_4.html"}
+]}

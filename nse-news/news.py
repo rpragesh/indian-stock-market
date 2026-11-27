@@ -75,30 +75,90 @@ def subject_of(desc):
     return (m.group(2) if m else desc).strip()
 
 
-def run(text, names, now, hours=24, everyone=False, min_impact="other"):
-    cutoff = now.replace(tzinfo=None) - dt.timedelta(hours=hours)
+def nse_items(text):
+    """NSE's announcements RSS as plain items."""
     out = []
     for it in feeds.rss_items(text):
-        if not everyone and not feeds.name_matches(it["title"], names):
+        out.append({"exchange": "NSE", "company": it["title"], "subject": subject_of(it["description"]),
+                    "extra": it["description"], "pub": parse_pub(it["pub"]), "pub_raw": it["pub"],
+                    "link": it["link"] or None})
+    return out
+
+
+def bse_items(data):
+    """BSE's announcements answer (AnnSubCategoryGetData) as plain items."""
+    out = []
+    for r in (data or {}).get("Table") or []:
+        subj = (r.get("HEADLINE") or "").strip() or re.sub(r"^.*? - \d{6} - ", "", r.get("NEWSSUB") or "").strip()
+        when = str(r.get("NEWS_DT") or r.get("DissemDT") or "")
+        try:
+            pub = dt.datetime.strptime(when[:19], "%Y-%m-%dT%H:%M:%S")
+        except ValueError:
+            pub = None
+        att = (r.get("ATTACHMENTNAME") or "").strip()
+        out.append({"exchange": "BSE", "company": (r.get("SLONGNAME") or "").strip(), "subject": subj,
+                    "extra": " ".join(str(r.get(k) or "") for k in ("NEWSSUB", "CATEGORYNAME", "SUBCATNAME")),
+                    "pub": pub, "pub_raw": when, "link": feeds.BSE_ATTACH + att if att else (r.get("NSURL") or None),
+                    "bse_code": str(r.get("SCRIP_CD") or "")})
+    return out
+
+
+def bse_fetch(now, hours, codes=None, max_pages=10, file=None):
+    """BSE announcements for the window: one ask per scrip code if we have codes, else page through all."""
+    if file:
+        return bse_items(feeds.bse_json("", {}, file))
+    start = (now - dt.timedelta(hours=hours)).strftime("%Y%m%d")
+    base = {"strCat": "-1", "subcategory": "-1", "strPrevDate": start, "strToDate": now.strftime("%Y%m%d"),
+            "strSearch": "P", "strType": "C"}
+    out = []
+    for code in (codes or [""]):
+        page = 1
+        while page <= max_pages:
+            data = feeds.bse_json("AnnSubCategoryGetData/w", dict(base, pageno=page, strScrip=code))
+            rows = bse_items(data)
+            out += rows
+            pages = int(((data.get("Table") or [{}])[0] or {}).get("TotalPageCnt") or 1) if rows else 0
+            if page >= pages:
+                break
+            page += 1
+    return out
+
+
+def filter_items(items, names, now, hours=24, everyone=False, min_impact="other"):
+    cutoff = now.replace(tzinfo=None) - dt.timedelta(hours=hours)
+    out, seen = [], set()
+    for it in items:
+        if not everyone and not feeds.name_matches(it["company"], names):
             continue
-        pub = parse_pub(it["pub"])
+        pub = it["pub"]
         if pub is not None and pub < cutoff:
             continue
-        subj = subject_of(it["description"])
-        tag, impact = classify(subj + " " + it["description"])
+        tag, impact = classify(it["subject"] + " " + it["extra"])
         if IMPACT_RANK[impact] > IMPACT_RANK[min_impact]:
             continue
-        out.append({"company": it["title"], "subject": subj, "tag": tag, "impact": impact,
-                    "time": pub.strftime("%Y-%m-%d %H:%M") if pub else it["pub"], "link": it["link"] or None})
+        key = (feeds.norm_name(it["company"]), feeds.norm_name(it["subject"])[:60], pub.date() if pub else None)
+        if key in seen:
+            continue  # the same filing on both exchanges
+        seen.add(key)
+        out.append({"exchange": it["exchange"], "company": it["company"], "subject": it["subject"], "tag": tag,
+                    "impact": impact, "time": pub.strftime("%Y-%m-%d %H:%M") if pub else it["pub_raw"],
+                    "link": it["link"]})
     out.sort(key=lambda x: (IMPACT_RANK[x["impact"]], -int(re.sub(r"\D", "", x["time"]) or 0)))
     return out
 
 
+def run(text, names, now, hours=24, everyone=False, min_impact="other", bse=None):
+    """NSE's RSS text (and BSE items, if given) -> the filings that matter, high impact first."""
+    items = (nse_items(text) if text else []) + (bse or [])
+    return filter_items(items, names, now, hours, everyone, min_impact)
+
+
 def describe(rows, hours, names, everyone):
     who = "all companies" if everyone else ", ".join(names) or "(empty watchlist)"
-    out = ["NSE announcements, last %d hours, %s: %d" % (hours, who, len(rows))]
+    out = ["Announcements, last %d hours, %s: %d" % (hours, who, len(rows))]
     for r in rows:
-        out.append("  [%s/%s] %s  %s: %s" % (r["impact"], r["tag"], r["time"], r["company"], r["subject"][:160]))
+        out.append("  [%s/%s] %s %s  %s: %s" % (r["impact"], r["tag"], r["exchange"], r["time"], r["company"],
+                                                r["subject"][:160]))
         if r["link"]:
             out.append("      %s" % r["link"])
     if not rows:
@@ -108,26 +168,48 @@ def describe(rows, hours, names, everyone):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description="NSE announcements for your watchlist.")
+    ap = argparse.ArgumentParser(description="NSE and BSE announcements for your watchlist.")
     ap.add_argument("--names", help="extra company names or symbols, comma separated")
     ap.add_argument("--all", action="store_true", help="every company (pair with --min-impact high)")
     ap.add_argument("--min-impact", choices=("high", "medium", "low", "other"), default=None)
     ap.add_argument("--hours", type=int, default=24)
-    ap.add_argument("--file", help="a saved copy of the announcements RSS")
+    ap.add_argument("--exchange", choices=("nse", "bse", "both"), default="both")
+    ap.add_argument("--bse-pages", type=int, default=10, help="without BSE codes, how many pages of BSE filings to read")
+    ap.add_argument("--file", help="a saved copy of NSE's announcements RSS")
+    ap.add_argument("--bse-file", help="a saved copy of BSE's announcements answer (JSON)")
     ap.add_argument("--now", help='"YYYY-MM-DD HH:MM" IST')
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     cfg = nselib.config()
     wl = cfg.get("watchlist") or {}
-    names = list(wl.values()) + list(wl.keys()) + ([x.strip() for x in a.names.split(",")] if a.names else [])
-    try:
-        text = feeds.fetch("announcements", a.file)
-    except OSError as e:
-        print("Could not reach NSE's announcements feed (%s). Save %s from a browser and pass --file." % (e, feeds.URLS["announcements"]))
+    extra = [x.strip() for x in a.names.split(",")] if a.names else []
+    names = list(wl.values()) + list(wl.keys()) + extra
+    now = market.now_ist(a.now).replace(tzinfo=None)
+    text, bse, notes = None, [], []
+    if a.exchange in ("nse", "both"):
+        try:
+            text = feeds.fetch("announcements", a.file)
+        except OSError as e:
+            notes.append("Could not reach NSE's announcements feed (%s). Save %s from a browser and pass --file." % (
+                e, feeds.URLS["announcements"]))
+    if a.exchange in ("bse", "both"):
+        codes = None if (a.all or extra) else [str(c) for c in (cfg.get("bse_codes") or {}).values()] or None
+        try:
+            bse = bse_fetch(now, a.hours, codes, a.bse_pages, a.bse_file)
+        except (OSError, ValueError) as e:
+            notes.append("Could not reach BSE's announcements (%s). Pass --bse-file with a saved copy, "
+                         "or --exchange nse." % e)
+    if text is None and not bse and notes:
+        print("\n".join(notes))
         return 1
     min_impact = a.min_impact or ("high" if a.all else "other")
-    rows = run(text, names, market.now_ist(a.now), a.hours, a.all, min_impact)
-    print(json.dumps(rows, indent=2) if a.json else describe(rows, a.hours, list(wl.keys()) + ([a.names] if a.names else []), a.all))
+    rows = run(text, names, now, a.hours, a.all, min_impact, bse)
+    if a.json:
+        print(json.dumps({"filings": rows, "notes": notes}, indent=2))
+    else:
+        print(describe(rows, a.hours, list(wl.keys()) + extra, a.all))
+        for n in notes:
+            print(n)
     return 0
 
 
