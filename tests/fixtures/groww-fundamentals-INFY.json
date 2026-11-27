@@ -1,0 +1,14 @@
+{"result": {"content": {"infosys-ltd": {"financialStatement": {"Income Statement": {
+ "quarterlyFinancial": {
+  "Revenue": {"values": {"Sep '25": 45472.0, "Dec '25": 46618.0, "Mar '26": 47561.0, "Jun '26": 49195.0, "Sep '26": 50092.0}, "unit": "All values in Rupees. Cr"},
+  "EBITDA": {"values": {"Sep '25": 11517.0, "Dec '25": 11773.0, "Mar '26": 12326.0, "Jun '26": 12393.0, "Sep '26": 12537.0}, "unit": "All values in Rupees. Cr"},
+  "Net Profit": {"values": {"Sep '25": 7375.0, "Dec '25": 6666.0, "Mar '26": 8509.0, "Jun '26": 7775.0, "Sep '26": 7838.0}, "unit": "All values in Rupees. Cr"},
+  "Operating Profit Margin": {"values": {"Sep '25": 25.89, "Dec '25": 23.05, "Mar '26": 26.56, "Jun '26": 25.71, "Sep '26": 25.46}, "unit": "%"},
+  "Net Profit Margin": {"values": {"Sep '25": 16.55, "Dec '25": 16.58, "Mar '26": 18.32, "Jun '26": 16.11, "Sep '26": 15.89}, "unit": "%"},
+  "Earning Per Share (Diluted)": {"values": {"Sep '25": 17.74, "Dec '25": 16.14, "Mar '26": 20.98, "Jun '26": 19.17, "Sep '26": 19.3}}},
+ "yearlyFinancial": {
+  "Revenue": {"values": {"2022": 123936.0, "2023": 149468.0, "2024": 158381.0, "2025": 166590.0, "2026": 182972.0}, "unit": "All values in Rupees. Cr"},
+  "Net Profit": {"values": {"2022": 22146.0, "2023": 24108.0, "2024": 26248.0, "2025": 26750.0, "2026": 29474.0}, "unit": "All values in Rupees. Cr"}}}}},
+ "hcl-infosystems-ltd": {"financialStatement": {"Income Statement": {"quarterlyFinancial": {
+  "Revenue": {"values": {"Sep '25": 17.07, "Sep '26": 7.34}, "unit": "All values in Rupees. Cr"},
+  "Net Profit": {"values": {"Sep '25": -5.5, "Sep '26": -14.94}, "unit": "All values in Rupees. Cr"}}}}}}}}
