@@ -56,7 +56,7 @@ the defaults when they have no view.
 - **max_loss_per_trade_inr**, **max_daily_loss_inr**, **max_trades_per_day**, **max_open_positions**, **max_position_pct**, **cash_buffer_pct**, **min_reward_risk**: the limits nse-budget and nse-risk enforce.
 - **no_entries_before** / **no_entries_after**: the entry window, IST (09:30 to 14:45). The first 15 minutes after the 09:15 open are noisy.
 - **square_off_time**: leave `null` to use the broker's time from `brokers.json`, or set it (for example `"15:20"`) when the broker changes it. **exit_buffer_minutes** (10) puts "flat by" that many minutes earlier, so we exit before the broker's auto square-off and its ₹50 fee.
-- **holidays**: the NSE trading holidays for the year as `"YYYY-MM-DD"` strings. Ask the user to paste them from NSE's holiday list. Without them, a holiday looks like a trading day.
+- **holidays**: the NSE trading holidays as `"YYYY-MM-DD"` strings. The example ships with 2026. Each December, check NSE's list (nseindia.com/resources/exchange-communication-holidays) and add the next year's. Without them, a holiday looks like a trading day, and `market.py` warns when the current year has none.
 - **allow_short**, **allow_fno**, **allow_margin**: `false`. Phase 1 is cash equity, long only, by default.
 
 ## Step 2: the broker connector

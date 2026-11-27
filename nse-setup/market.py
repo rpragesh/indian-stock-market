@@ -119,7 +119,7 @@ def status(now, cfg, brokers=None):
         "must_exit_now": bool(cfg.get("product") == "intraday" and phase == "open" and t >= fb),
         "paper": bool(cfg.get("paper", True)),
         "broker": cfg["broker"],
-        "holidays_loaded": len(cfg.get("holidays", [])),
+        "holidays_loaded": sum(1 for h in cfg.get("holidays", []) if h.startswith(str(now.year))),
     }
 
 
@@ -130,7 +130,9 @@ def main(argv=None):
     p.add_argument("--json", action="store_true")
     a = p.parse_args(argv)
     cfg = load_config(a.config)
-    s = status(now_ist(a.now), cfg)
+    now = now_ist(a.now)
+    now_year = now.year
+    s = status(now, cfg)
     if a.json:
         print(json.dumps(s, indent=2))
         return 0
@@ -143,7 +145,7 @@ def main(argv=None):
         print("%d minutes until flat-by." % s["minutes_to_flat"])
     print("Mode: %s." % ("PAPER" if s["paper"] else "LIVE TICKETS (you place every order yourself)"))
     if not s["holidays_loaded"]:
-        print("Note: no exchange holidays loaded in nse/config.json, so holidays look like trading days.")
+        print("Note: no %d exchange holidays in nse/config.json, so holidays look like trading days." % now_year)
     return 0
 
 

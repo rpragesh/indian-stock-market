@@ -27,8 +27,16 @@ class Clock(unittest.TestCase):
 
     def test_holiday_from_config(self):
         s = at("2026-11-27 11:00", holidays=["2026-11-27"])
+        self.assertTrue(at("2026-11-27 11:00")["trading_day"])
         self.assertFalse(s["trading_day"])
         self.assertFalse(s["can_enter"])
+
+    def test_shipped_2026_holidays(self):
+        # 2026-11-24 (Guru Nanak Jayanti) is in the example config
+        s = mk.status(mk.now_ist("2026-11-24 11:00"), mk.load_config(None))
+        self.assertFalse(s["trading_day"])
+        self.assertEqual(s["holidays_loaded"], 16)
+        self.assertEqual(mk.status(mk.now_ist("2027-01-04 11:00"), mk.load_config(None))["holidays_loaded"], 0)
 
     def test_entry_window(self):
         self.assertFalse(at("2026-11-27 09:20")["can_enter"])
