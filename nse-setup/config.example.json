@@ -1,0 +1,31 @@
+{
+  "broker": "groww",
+  "paper": true,
+  "paper_capital_inr": 100000,
+
+  "exchange": "NSE",
+  "product": "intraday",
+
+  "max_loss_per_trade_inr": 500,
+  "max_daily_loss_inr": 1500,
+  "max_trades_per_day": 3,
+  "max_open_positions": 2,
+  "max_position_pct": 50,
+  "cash_buffer_pct": 10,
+  "min_reward_risk": 1.5,
+  "require_stop": true,
+
+  "market_open": "09:15",
+  "market_close": "15:30",
+  "no_entries_before": "09:30",
+  "no_entries_after": "14:45",
+  "square_off_time": null,
+  "exit_buffer_minutes": 10,
+
+  "holidays": [],
+
+  "allow_short": false,
+  "allow_fno": false,
+  "allow_margin": false,
+  "blocked": []
+}

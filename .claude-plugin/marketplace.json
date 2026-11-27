@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "indian-stock-market",
+  "description": "NSE and BSE intraday trading skills for Claude. Analysis only.",
+  "owner": {"name": "rpragesh", "url": "https://github.com/rpragesh"},
+  "plugins": [
+    {
+      "name": "indian-stock-market",
+      "description": "NSE and BSE intraday skills: setup, charges and market clock now; sizing, risk, exits, tickets, scanner, replay, alerts, announcements, results and insider deals to follow. Paper first, never places orders.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/rpragesh/indian-stock-market"
+    }
+  ]
+}
