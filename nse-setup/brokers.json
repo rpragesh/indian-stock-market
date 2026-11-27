@@ -2,21 +2,76 @@
   "_note": "Statutory and broker charges for NSE/BSE cash equity. Rates are percentages of turnover unless the key ends in _inr. Check them against each broker's page before trusting a P&L: they change, and the pages are the source of truth.",
   "statutory": {
     "as_of": "2026-11-27",
-    "stt_pct": {"intraday": {"sell": 0.025, "buy": 0.0}, "delivery": {"sell": 0.1, "buy": 0.1}},
-    "exchange_txn_pct": {"NSE": 0.00307, "BSE": 0.00375},
+    "stt_pct": {
+      "intraday": {
+        "sell": 0.025,
+        "buy": 0.0
+      },
+      "delivery": {
+        "sell": 0.1,
+        "buy": 0.1
+      },
+      "options": {
+        "sell": 0.15,
+        "buy": 0.0
+      }
+    },
+    "exchange_txn_pct": {
+      "NSE": 0.00307,
+      "BSE": 0.00375
+    },
     "sebi_fee_pct": 0.0001,
-    "ipft_pct": {"NSE": 0.0001, "BSE": 0.0},
-    "stamp_duty_pct": {"intraday": {"buy": 0.003, "sell": 0.0}, "delivery": {"buy": 0.015, "sell": 0.0}},
+    "ipft_pct": {
+      "NSE": 0.0001,
+      "BSE": 0.0
+    },
+    "stamp_duty_pct": {
+      "intraday": {
+        "buy": 0.003,
+        "sell": 0.0
+      },
+      "delivery": {
+        "buy": 0.015,
+        "sell": 0.0
+      },
+      "options": {
+        "buy": 0.003,
+        "sell": 0.0
+      }
+    },
     "gst_pct": 18.0,
-    "gst_applies_to": ["brokerage", "exchange_txn", "sebi_fee", "ipft", "dp"],
+    "gst_applies_to": [
+      "brokerage",
+      "exchange_txn",
+      "sebi_fee",
+      "ipft",
+      "dp"
+    ],
     "sources": [
       "https://zerodha.com/charges",
-      "https://groww.in/pricing/stocks"
+      "https://groww.in/pricing/stocks",
+      "https://groww.in/pricing/futures-and-options"
     ],
     "caveats": [
       "Groww's intraday help page still says NSE 0.00297%; both brokers' pricing pages say 0.00307%, which is used here.",
-      "IPFT on NSE is Rs 10 per crore (0.0001%). Zerodha's page prints 'Rs 0.01 per crore', which looks like a typo; 0.0001% is used for both brokers."
-    ]
+      "IPFT on NSE is Rs 10 per crore (0.0001%). Zerodha's page prints 'Rs 0.01 per crore', which looks like a typo; 0.0001% is used for both brokers.",
+      "Options on NSE: Zerodha's page says 0.03553% of premium, Groww's says 0.03503%. The higher one is used, so P&L errs on the side of more charges.",
+      "Options STT is 0.15% of the premium on the sell side on both brokers' pages (Nov 2026). An option held to expiry and exercised pays 0.15% of intrinsic value instead; intraday plans here are always closed before that.",
+      "IPFT on options: Groww lists 0.0005% of premium; Zerodha prints 'Rs 0.01 per crore' again. 0.0005% is used."
+    ],
+    "_note_options": "Options (product \"options\"): every percentage is of the premium traded (price x quantity). Option buying only in this pack.",
+    "exchange_txn_pct_by_product": {
+      "options": {
+        "NSE": 0.03553,
+        "BSE": 0.0325
+      }
+    },
+    "ipft_pct_by_product": {
+      "options": {
+        "NSE": 0.0005,
+        "BSE": 0.0
+      }
+    }
   },
   "brokers": {
     "groww": {
@@ -24,27 +79,75 @@
       "as_of": "2026-11-27",
       "source": "https://groww.in/help/stocks,-f&o,-ipo-&-mtf/sx-pricing/what-are-intraday-charges",
       "brokerage": {
-        "intraday": {"flat_inr": 20, "pct": 0.1, "min_inr": 5, "min_pct_of_value": 2.5},
-        "delivery": {"flat_inr": 20, "pct": 0.1, "min_inr": 5, "min_pct_of_value": 2.5}
+        "intraday": {
+          "flat_inr": 20,
+          "pct": 0.1,
+          "min_inr": 5,
+          "min_pct_of_value": 2.5
+        },
+        "delivery": {
+          "flat_inr": 20,
+          "pct": 0.1,
+          "min_inr": 5,
+          "min_pct_of_value": 2.5
+        },
+        "options": {
+          "flat_inr": 20,
+          "pct": 0,
+          "min_inr": 0,
+          "min_pct_of_value": 0
+        }
       },
-      "dp_charge_sell_inr": {"depository": 3.5, "broker": 16.5, "broker_waived_below_value_inr": 100},
+      "dp_charge_sell_inr": {
+        "depository": 3.5,
+        "broker": 16.5,
+        "broker_waived_below_value_inr": 100
+      },
       "auto_square_off": "15:20",
       "auto_square_off_fee_inr": 50,
-      "mcp": {"name": "GrowwMCP", "url": "https://mcp.groww.in/mcp"}
+      "mcp": {
+        "name": "GrowwMCP",
+        "url": "https://mcp.groww.in/mcp"
+      },
+      "options_source": "https://groww.in/pricing/futures-and-options"
     },
     "zerodha": {
       "name": "Zerodha",
       "as_of": "2026-11-27",
       "source": "https://zerodha.com/charges",
       "brokerage": {
-        "intraday": {"flat_inr": 20, "pct": 0.03, "min_inr": 0, "min_pct_of_value": 0},
-        "delivery": {"flat_inr": 0, "pct": 0, "min_inr": 0, "min_pct_of_value": 0}
+        "intraday": {
+          "flat_inr": 20,
+          "pct": 0.03,
+          "min_inr": 0,
+          "min_pct_of_value": 0
+        },
+        "delivery": {
+          "flat_inr": 0,
+          "pct": 0,
+          "min_inr": 0,
+          "min_pct_of_value": 0
+        },
+        "options": {
+          "flat_inr": 20,
+          "pct": 0,
+          "min_inr": 0,
+          "min_pct_of_value": 0
+        }
       },
-      "dp_charge_sell_inr": {"depository": 3.5, "broker": 9.5, "broker_waived_below_value_inr": 0},
+      "dp_charge_sell_inr": {
+        "depository": 3.5,
+        "broker": 9.5,
+        "broker_waived_below_value_inr": 0
+      },
       "auto_square_off": "15:20",
       "auto_square_off_note": "Zerodha's charges page does not state the MIS square-off time. Check Kite before relying on 15:20 and override it with square_off_time in nse/config.json.",
       "auto_square_off_fee_inr": 50,
-      "mcp": {"name": "Kite", "url": "https://mcp.kite.trade/mcp"}
+      "mcp": {
+        "name": "Kite",
+        "url": "https://mcp.kite.trade/mcp"
+      },
+      "options_source": "https://zerodha.com/charges"
     }
   }
 }

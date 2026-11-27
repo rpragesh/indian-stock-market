@@ -63,7 +63,24 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | `nse-alerts` | Price, stop, target and square-off reminders | ready |
 | `nse-news` | NSE and BSE corporate announcements for your watchlist, tagged by impact | ready |
 | `nse-results` | Quarterly results: what changed QoQ and YoY | ready |
+| `nse-options` | Which CE or PE to buy for a setup, with entry, stop, target and lots on the premium (paper) | ready |
+| `nse-brief` | "Check the market": runs all of the above, ranks the top 10 intraday stocks and adds an F&O pick | ready |
 | `nse-insider` | Bulk and block deals, insider trades (SEBI PIT) and shareholding changes | ready |
+
+## Check the market in one go
+
+Ask Claude "check the market". It builds a shortlist from Groww's movers
+and screeners, saves the candles and option data, and runs:
+
+```bash
+python3 nse-brief/brief.py --write     # top 10 intraday stocks, and an F&O pick, each with entry, stop, target and exit time
+```
+
+Each stock is scanned, planned, sized after charges, risk-checked,
+replayed when there is history, and checked for big filings, then ranked
+by a fixed score. The F&O pick is option buying on paper: a call for a
+bullish setup, a put for a bearish one, with the premium stop and target
+and how many lots fit your max loss.
 
 ## A paper trade, start to finish
 

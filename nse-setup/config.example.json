@@ -39,6 +39,11 @@
     "2026-12-25"
   ],
   "holidays_note": "NSE/BSE equity trading holidays for 2026 that fall on weekdays, from zerodha.com/marketintel/holiday-calendar (NSE's own page, nseindia.com/resources/exchange-communication-holidays, loads its table by script). Add 2027 when NSE publishes it. Muhurat trading (Sun 2026-11-08) is a special session and is not modelled.",
+  "options": {
+    "max_loss_per_trade_inr": null,
+    "target_delta": 0.55,
+    "max_premium_stop_pct": 35
+  },
   "allow_short": false,
   "allow_fno": false,
   "allow_margin": false,
