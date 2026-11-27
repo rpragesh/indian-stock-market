@@ -5,7 +5,7 @@ import unittest
 
 from _load import ROOT
 
-READY = ["nse-setup"]
+READY = ["nse-budget", "nse-exit", "nse-risk", "nse-setup", "nse-ticket"]
 # words that would mean a skill calls an order tool
 ORDER_CALLS = re.compile(r"\b(place_order|modify_order|cancel_order|place_gtt|placeOrder)\s*\(")
 

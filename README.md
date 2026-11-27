@@ -53,10 +53,10 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | skill | job | status |
 | --- | --- | --- |
 | `nse-setup` | Your rules, the broker connector, the IST market clock, and the charges calculator | ready |
-| `nse-budget` | Position size from capital and max loss, after charges | planned |
-| `nse-risk` | PASS or BLOCK against your limits | planned |
-| `nse-exit` | Stop, target, and out before square-off | planned |
-| `nse-ticket` | An order ticket you place yourself in your broker's app | planned |
+| `nse-budget` | Position size from capital and max loss, after charges | ready |
+| `nse-risk` | PASS or BLOCK against your limits | ready |
+| `nse-exit` | Stop, target, and out before square-off | ready |
+| `nse-ticket` | An order ticket you place yourself in your broker's app | ready |
 | `nse-scanner` | Opening-range breakouts, flags and oversold bounces on NSE stocks | planned |
 | `nse-entry` | Watches a setup bar by bar | planned |
 | `nse-timemachine` | Replays the trade 10,000 times from recent candles | planned |
@@ -64,6 +64,20 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | `nse-news` | NSE and BSE corporate announcements and headlines | planned |
 | `nse-results` | Quarterly results summary | planned |
 | `nse-insider` | Bulk and block deals, plus promoter and insider trades (SEBI PIT disclosures) | planned |
+
+## A paper trade, start to finish
+
+```bash
+python3 nse-exit/exit.py plan --symbol INFY --entry 1612.50 --or-high 1610 --or-low 1596.20 --target 2.5R --write
+python3 nse-budget/size.py --write     # 31 shares: loses Rs 356.37 at the stop, makes Rs 663.24 at the target, after charges
+python3 nse-risk/check.py              # PASS or BLOCK, with every reason
+python3 nse-ticket/ticket.py show      # the ticket for Groww or Kite
+python3 nse-ticket/ticket.py log --confirm                              # only after your yes: a paper fill
+python3 nse-ticket/ticket.py close --symbol INFY --exit 1636 --reason target
+python3 nse-ticket/ticket.py today     # net P&L after charges, paper equity
+```
+
+Or just ask Claude: "plan INFY at 1612.50 with the opening range 1596.20 to 1610".
 
 ## Try the base layer
 

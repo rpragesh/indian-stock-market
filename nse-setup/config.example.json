@@ -4,6 +4,7 @@
   "paper_capital_inr": 100000,
   "exchange": "NSE",
   "product": "intraday",
+  "tick_size": 0.05,
   "max_loss_per_trade_inr": 500,
   "max_daily_loss_inr": 1500,
   "max_trades_per_day": 3,
