@@ -153,11 +153,84 @@ def bounce(today, p, tick, history=None):
 
 DETECTORS = {"orb": orb, "flag": flag, "bounce": bounce}
 
+# ---- bearish setups, for put (PE) ideas only ----------------------------------
+# The cash-equity skills are long only. A put buyer wants the opposite
+# patterns, so these run the same detectors on a mirror image of the bars:
+# every price p becomes K/p, which turns rises into falls and highs into lows
+# while keeping percentage moves about the same. The answer is mapped back.
 
-def detect(today, p, tick, history=None, which=None):
+BEAR_OF = {"orb_down": "orb", "bear_flag": "flag", "fade": "bounce"}
+
+
+def _mirror_bars(bars_, k):
+    return [dict(b, o=k / b["o"], h=k / b["l"], l=k / b["h"], c=k / b["c"]) for b in bars_]
+
+
+def _bear(name, today, p, tick, history=None):
+    if not today:
+        return None
+    k = today[0]["o"] ** 2
+    r = DETECTORS[BEAR_OF[name]](_mirror_bars(today, k), p, 1e-9, _mirror_bars(history or [], k))
+    if not r:
+        return None
+    back = lambda x, how: None if x is None else nselib.to_tick(k / x, tick, how)  # noqa: E731
+    out = {"setup": name, "state": r["state"], "bar": r["bar"], "side": "short",
+           "trigger": back(r["trigger"], "down"), "entry": back(r["entry"], "nearest"),
+           "stop": back(r["stop"], "up"), "stop_rule": r["stop_rule"]}
+    if r["state"] == "forming" and out["trigger"] is not None:
+        out["trigger"] = nselib.to_tick(out["trigger"] - tick, tick, "down")  # a close one tick under the level
+    for key in ("volume_ok", "bars_ago"):
+        if key in r:
+            out[key] = r[key]
+    if name == "orb_down":
+        out["or_high"], out["or_low"] = k / r["or_low"], k / r["or_high"]
+        last = today[-1]["c"]
+        out["why"] = {
+            "forming": "inside the opening range %.2f to %.2f" % (out["or_low"], out["or_high"]),
+            "failed": "closed over the opening-range high %.2f at %s before any breakdown" % (out["or_high"], r["bar"]),
+        }.get(r["state"], "closed %.2f under the opening-range low %.2f at %s%s" % (
+            out["entry"] or last, out["or_low"], r["bar"], "" if r.get("volume_ok", True) else " (weak volume)"))
+    elif name == "bear_flag":
+        top, bottom = k / r["pole"][0], k / r["pole"][1]
+        out["pole"] = [top, bottom]
+        out["why"] = "fall %.2f to %.2f (%.1f%%), then a short bounce%s" % (
+            top, bottom, (top - bottom) / top * 100,
+            "; closed %.2f under the bounce's low" % out["entry"] if r["state"] == "triggered" else " so far")
+    else:  # fade
+        closes = [b["c"] for b in (history or [])] + [b["c"] for b in today]
+        rsi_now = B.rsi(closes, int(p["rsi_len"]))
+        out["why"] = ("RSI(%d) went over %d, then %s closed %.2f under the prior bar's low" % (
+            int(p["rsi_len"]), 100 - int(p["rsi_oversold"]), r["bar"], out["entry"])
+            if r["state"] == "triggered" else
+            "RSI(%d) %.1f, overbought; waiting for a close under %.2f" % (
+                int(p["rsi_len"]), rsi_now or 0, out["trigger"]))
+    return out
+
+
+def orb_down(today, p, tick, history=None):
+    """Opening-range breakdown: a close under the low of the first or_minutes."""
+    return _bear("orb_down", today, p, tick, history)
+
+
+def bear_flag(today, p, tick, history=None):
+    """Bear flag: a sharp fall, a short weak bounce, then a close under the bounce's low."""
+    return _bear("bear_flag", today, p, tick, history)
+
+
+def fade(today, p, tick, history=None):
+    """Overbought fade: RSI over 70 in the last few bars, then a close under the prior bar's low."""
+    return _bear("fade", today, p, tick, history)
+
+
+BEAR_DETECTORS = {"orb_down": orb_down, "bear_flag": bear_flag, "fade": fade}
+
+
+def detect(today, p, tick, history=None, which=None, bearish=False):
+    """Setups in today's closed bars: the long ones, plus the bearish mirrors when asked (for puts)."""
+    table = dict(DETECTORS, **BEAR_DETECTORS) if bearish else DETECTORS
     out = []
-    for name in (which or DETECTORS):
-        r = DETECTORS[name](today, p, tick, history)
+    for name in (which or table):
+        r = table[name](today, p, tick, history)
         if r:
             out.append(r)
     return out

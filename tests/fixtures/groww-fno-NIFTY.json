@@ -1,0 +1,203 @@
+{
+ "oi": {
+  "result_timestamp": "2026-11-27 Friday 09:48:37 PM IST",
+  "result": {
+   "symbol": "NIFTY",
+   "meta": {
+    "symbol": "NIFTY",
+    "spot_price": 25607.2,
+    "api_pcr": 0.5874439148850026,
+    "lot_size": 65,
+    "asset_type": "INDICES"
+   },
+   "metrics": {
+    "pcr": 0.5874439148850026,
+    "atm_strike": 25600.0,
+    "lot_size": 65,
+    "total_call_oi": 260720915.0,
+    "total_put_oi": 153158915.0
+   },
+   "charts": [],
+   "note": "Expiry: 2026-12-01 (NSE) | Time: 09:15 - 15:40"
+  }
+ },
+ "ltp": {
+  "result": {
+   "ltp_results": {
+    "NSE-NIFTY 01 Dec 25500 Call": {
+     "symbol": "NIFTY26D0125500CE",
+     "ltp": 191.85,
+     "volume": 7317,
+     "open_interest": 52199,
+     "oi_day_change_perc": 33.72
+    },
+    "NSE-NIFTY 01 Dec 25500 Put": {
+     "symbol": "NIFTY26D0125500PE",
+     "ltp": 103.2,
+     "volume": 73557,
+     "open_interest": 112694,
+     "oi_day_change_perc": -3.29
+    },
+    "NSE-NIFTY 01 Dec 25600 Call": {
+     "symbol": "NIFTY26D0125600CE",
+     "ltp": 140.55,
+     "volume": 22054,
+     "open_interest": 82910,
+     "oi_day_change_perc": 351.36
+    },
+    "NSE-NIFTY 01 Dec 25600 Put": {
+     "symbol": "NIFTY26D0125600PE",
+     "ltp": 151.55,
+     "volume": 71713,
+     "open_interest": 82598,
+     "oi_day_change_perc": -12.58
+    },
+    "NSE-NIFTY 01 Dec 25700 Call": {
+     "symbol": "NIFTY26D0125700CE",
+     "ltp": 100.65,
+     "volume": 60976,
+     "open_interest": 120313,
+     "oi_day_change_perc": 348.22
+    },
+    "NSE-NIFTY 01 Dec 25700 Put": {
+     "symbol": "NIFTY26D0125700PE",
+     "ltp": 211.75,
+     "volume": 88284,
+     "open_interest": 67649,
+     "oi_day_change_perc": -6.73
+    },
+    "NSE-NIFTY 01 Dec 25400 Put": {
+     "symbol": "NIFTY26D0125400PE",
+     "ltp": 66.7,
+     "volume": 40496,
+     "open_interest": 90383,
+     "oi_day_change_perc": 8.35
+    },
+    "NSE-NIFTY 01 Dec 25800 Call": {
+     "symbol": "NIFTY26D0125800CE",
+     "ltp": 70.75,
+     "volume": 73125,
+     "open_interest": 203830,
+     "oi_day_change_perc": 232.91
+    },
+    "NSE-NIFTY 08 Dec 25500 Put": {
+     "symbol": "NIFTY26D0825500PE",
+     "ltp": 213.85,
+     "volume": 1037,
+     "open_interest": 17557,
+     "oi_day_change_perc": 62.46
+    }
+   }
+  }
+ },
+ "greeks": {
+  "result": {
+   "fno_contract_greeks": [
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125400PE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "PE",
+     "strikePrice": 25400,
+     "delta": -0.3036,
+     "gamma": 0.001,
+     "iv": 13.7526,
+     "theta": -16.1315
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125500CE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "CE",
+     "strikePrice": 25500,
+     "delta": 0.594,
+     "gamma": 0.001,
+     "iv": 13.9042,
+     "theta": -18.0941
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125500PE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "PE",
+     "strikePrice": 25500,
+     "delta": -0.406,
+     "gamma": 0.001,
+     "iv": 13.9042,
+     "theta": -18.0941
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125600CE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "CE",
+     "strikePrice": 25600,
+     "delta": 0.4877,
+     "gamma": 0.0011,
+     "iv": 14.159,
+     "theta": -18.9456
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125600PE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "PE",
+     "strikePrice": 25600,
+     "delta": -0.5123,
+     "gamma": 0.0011,
+     "iv": 14.159,
+     "theta": -18.9456
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125700CE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "CE",
+     "strikePrice": 25700,
+     "delta": 0.386,
+     "gamma": 0.001,
+     "iv": 14.3861,
+     "theta": -18.4663
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125700PE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "PE",
+     "strikePrice": 25700,
+     "delta": -0.614,
+     "gamma": 0.001,
+     "iv": 14.3861,
+     "theta": -18.4663
+    },
+    {
+     "symbol": "NIFTY",
+     "growwContractId": "NIFTY26D0125800CE",
+     "stockSegment": "FNO",
+     "stockExchange": "NSE",
+     "expiryDate": "2026-12-01",
+     "optionType": "CE",
+     "strikePrice": 25800,
+     "delta": 0.2984,
+     "gamma": 0.0009,
+     "iv": 14.9013,
+     "theta": -17.3437
+    }
+   ]
+  }
+ }
+}

@@ -61,6 +61,7 @@ the defaults when they have no view.
 - **holidays**: the NSE trading holidays as `"YYYY-MM-DD"` strings. The example ships with 2026. Each December, check NSE's list (nseindia.com/resources/exchange-communication-holidays) and add the next year's. Without them, a holiday looks like a trading day, and `market.py` warns when the current year has none.
 - **allow_short**, **allow_fno**, **allow_margin**: `false`. Phase 1 is cash equity, long only, by default.
 - **watchlist**: NSE symbol to the company name NSE files under, for example `"INFY": "Infosys Limited"`. nse-news, nse-results and nse-insider read it.
+- **options**: limits for nse-options' paper option ideas only. `max_loss_per_trade_inr` (null uses the account's), `target_delta` (0.55), `max_premium_stop_pct` (35).
 - **bse_codes**: NSE symbol to BSE scrip code, for example `"INFY": "500209"`, so nse-news asks BSE for just those companies. Groww's `groww_contract_id` ends in it (`GSTK500209`).
 
 ## Step 2: the broker connector

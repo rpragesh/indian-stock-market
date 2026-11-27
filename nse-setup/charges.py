@@ -21,7 +21,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BROKERS_FILE = os.path.join(HERE, "brokers.json")
-PRODUCTS = ("intraday", "delivery")
+PRODUCTS = ("intraday", "delivery", "options")
 EXCHANGES = ("NSE", "BSE")
 
 
@@ -38,6 +38,8 @@ def leg_brokerage(rule, value):
     """Brokerage for one executed order of `value` rupees."""
     if value <= 0:
         return 0.0
+    if rule["flat_inr"] and not rule["pct"]:
+        return float(rule["flat_inr"])  # a flat fee per order (options)
     b = min(rule["flat_inr"], value * rule["pct"] / 100.0) if rule["flat_inr"] else value * rule["pct"] / 100.0
     if rule.get("min_inr") and b < rule["min_inr"]:
         b = min(rule["min_inr"], value * rule.get("min_pct_of_value", 0) / 100.0) if rule.get("min_pct_of_value") else rule["min_inr"]
@@ -69,9 +71,10 @@ def trade_charges(broker, buy_price, sell_price, qty, product="intraday", exchan
     rule = bk["brokerage"][product]
     brokerage = leg_brokerage(rule, buy_val) + leg_brokerage(rule, sell_val)
     stt = (buy_val * st["stt_pct"][product]["buy"] + sell_val * st["stt_pct"][product]["sell"]) / 100.0
-    exchange_txn = turnover * st["exchange_txn_pct"][exchange] / 100.0
+    # options pay their own exchange and IPFT rates, on the premium
+    exchange_txn = turnover * st.get("exchange_txn_pct_by_product", {}).get(product, st["exchange_txn_pct"])[exchange] / 100.0
     sebi_fee = turnover * st["sebi_fee_pct"] / 100.0
-    ipft = turnover * st["ipft_pct"].get(exchange, 0.0) / 100.0
+    ipft = turnover * st.get("ipft_pct_by_product", {}).get(product, st["ipft_pct"]).get(exchange, 0.0) / 100.0
     stamp = (buy_val * st["stamp_duty_pct"][product]["buy"] + sell_val * st["stamp_duty_pct"][product]["sell"]) / 100.0
 
     dp = 0.0
