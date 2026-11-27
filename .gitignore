@@ -1,0 +1,5 @@
+# your settings, plans and paper trades
+nse/
+__pycache__/
+*.pyc
+.DS_Store
