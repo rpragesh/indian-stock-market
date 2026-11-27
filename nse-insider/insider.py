@@ -207,17 +207,33 @@ def holding_changes(sp):
         groups.append({"group": g, "latest": v(latest), "qoq_pp": _pp(v(latest), v(prev)),
                        "yoy_pp": _pp(v(latest), v(yago))})
     def holders(q):
-        return {h["name"]: h["allocationPercent"] for h in ((sp.get(q, {}).get("promoters") or {}).get("holders") or [])} if q else {}
+        """Promoter holders keyed on the name without a "(formerly ...)" note, so a rename is not a sale."""
+        out = {}
+        for h in ((sp.get(q, {}).get("promoters") or {}).get("holders") or []) if q else []:
+            key = feeds.norm_name(h["name"].split("(")[0])
+            out.setdefault(key, [h["name"].split("(")[0].strip(), 0.0])[1] += h.get("allocationPercent") or 0.0
+        return out
     now_h, prev_h = holders(latest), holders(prev)
-    moves = []
-    for name in sorted(set(now_h) | set(prev_h)):
-        a, b = now_h.get(name), prev_h.get(name)
-        if a is None:
-            moves.append({"name": name, "prev": b, "latest": None, "note": "no longer listed as a promoter holder"})
-        elif b is None:
-            moves.append({"name": name, "prev": None, "latest": a, "note": "newly listed"})
-        elif abs(a - b) >= 0.05:
-            moves.append({"name": name, "prev": b, "latest": a, "note": "%+.2f pp" % (a - b)})
+    moves, minor, list_note = [], 0, None
+    if prev and not (now_h and prev_h):
+        missing = [q for q, h in ((latest, now_h), (prev, prev_h)) if not h]
+        list_note = "no promoter-by-name list for %s, so individual promoter moves can't be compared" % " or ".join(missing)
+    else:
+        for key in sorted(set(now_h) | set(prev_h)):
+            name = (now_h.get(key) or prev_h.get(key))[0]
+            a, b = (now_h.get(key) or [None, None])[1], (prev_h.get(key) or [None, None])[1]
+            if a is None:
+                m = {"name": name, "prev": b, "latest": None, "note": "no longer listed as a promoter holder"}
+            elif b is None:
+                m = {"name": name, "prev": None, "latest": a, "note": "newly listed"}
+            elif abs(a - b) >= 0.05:
+                m = {"name": name, "prev": b, "latest": a, "note": "%+.2f pp" % (a - b)}
+            else:
+                continue
+            if abs((a or 0) - (b or 0)) < 0.05:   # a holder of ~0% appearing or leaving: regrouping, not a trade
+                minor += 1
+                continue
+            moves.append(m)
     flags = []
     pr = groups[0]
     if pr["qoq_pp"] is not None and pr["qoq_pp"] <= -0.5:
@@ -228,7 +244,7 @@ def holding_changes(sp):
         if g["qoq_pp"] is not None and abs(g["qoq_pp"]) >= 2:
             flags.append("%s holding moved %+.2f pp last quarter" % (g["group"].upper(), g["qoq_pp"]))
     return {"quarter": latest, "prev_quarter": prev, "year_ago_quarter": yago, "groups": groups,
-            "promoter_moves": moves, "flags": flags}
+            "promoter_moves": moves, "promoter_minor": minor, "promoter_list_note": list_note, "flags": flags}
 
 
 def _qkey(label):
@@ -302,6 +318,11 @@ def describe_holding(sym, h):
     for m in h["promoter_moves"]:
         lines.append("    promoter %s: %s%s" % (m["name"], m["note"], "" if m["prev"] is None or m["latest"] is None
                                                else " (%.2f%% -> %.2f%%)" % (m["prev"], m["latest"])))
+    if h.get("promoter_minor"):
+        lines.append("    plus %d promoter entities with ~0%% added or dropped from the list (regrouping, not a trade)"
+                     % h["promoter_minor"])
+    if h.get("promoter_list_note"):
+        lines.append("    " + h["promoter_list_note"])
     lines.append("  Watch: " + ("; ".join(h["flags"]) if h["flags"] else "no big change in who owns it"))
     return lines
 

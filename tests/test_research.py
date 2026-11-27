@@ -209,6 +209,22 @@ class Insider(WithNse):
         gone = [m for m in h["promoter_moves"] if m["name"] == "Shreyas Shibulal"]
         self.assertEqual(gone[0]["note"], "no longer listed as a promoter holder")
 
+    def test_holding_rename_and_regrouping_are_not_trades(self):
+        def q(holders):
+            return {"promoters": {"totalPercent": 50.0, "holders": [{"name": n, "allocationPercent": v} for n, v in holders]}}
+        sp = {"Jun '26": q([("Tata Play Limited (formerly Tata-sky-limited)", 1.2), ("Big Holder", 48.8)]),
+              "Sep '26": q([("Tata Play Limited", 1.2), ("Big Holder", 48.8), ("New Shell Llp", 0.0)])}
+        h = ins.holding_changes(sp)
+        self.assertEqual(h["promoter_moves"], [])
+        self.assertEqual(h["promoter_minor"], 1)
+
+    def test_holding_missing_holder_list_is_not_a_sell_off(self):
+        sp = {"Jun '26": {"promoters": {"totalPercent": 50.48, "holders": [{"name": "A Llp", "allocationPercent": 11.12}]}},
+              "Sep '26": {"promoters": {"totalPercent": 50.44, "holders": []}}}
+        h = ins.holding_changes(sp)
+        self.assertEqual(h["promoter_moves"], [])
+        self.assertIn("Sep '26", h["promoter_list_note"])
+
     def test_cli(self):
         code, out = run(ins, "--bulk-file", BULK, "--block-file", BLOCK, "--insider-file", PIT,
                         "--now", "2026-11-27 18:00", "--holding", "--symbols", "INFY,HDFCBANK", "--holding-file", HOLD)
