@@ -61,9 +61,9 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | `nse-entry` | Watches a setup bar by bar | ready |
 | `nse-timemachine` | Replays the trade 10,000 times from recent candles | ready |
 | `nse-alerts` | Price, stop, target and square-off reminders | ready |
-| `nse-news` | NSE and BSE corporate announcements and headlines | planned |
-| `nse-results` | Quarterly results summary | planned |
-| `nse-insider` | Bulk and block deals, plus promoter and insider trades (SEBI PIT disclosures) | planned |
+| `nse-news` | NSE corporate announcements for your watchlist, tagged by impact | ready |
+| `nse-results` | Quarterly results: what changed QoQ and YoY | ready |
+| `nse-insider` | Bulk and block deals, plus promoter and insider trades (SEBI PIT disclosures) | ready |
 
 ## A paper trade, start to finish
 
@@ -92,6 +92,18 @@ python3 nse-exit/exit.py plan --from-entry --target 2.5R --write
 python3 nse-timemachine/timemachine.py                       # 10,000 replays and every past trigger, after charges
 python3 nse-alerts/alerts.py check --ltp INFY=1171.5         # stop, target, flat-by and square-off reminders
 ```
+
+## Research before a trade
+
+```bash
+python3 nse-news/news.py                     # today's NSE filings for your watchlist, high impact first
+python3 nse-results/results.py --symbol INFY # the latest quarter vs last quarter and last year
+python3 nse-insider/insider.py               # bulk, block and insider deals in your watchlist
+```
+
+News and deals come from NSE's public archive files. Results come from the
+Groww connector, which Claude fetches and saves to `nse/results/`. Your
+watchlist is `"watchlist"` in `nse/config.json`. BSE filings are not read yet.
 
 ## Try the base layer
 

@@ -60,6 +60,7 @@ the defaults when they have no view.
 - **square_off_time**: leave `null` to use the broker's time from `brokers.json`, or set it (for example `"15:20"`) when the broker changes it. **exit_buffer_minutes** (10) puts "flat by" that many minutes earlier, so we exit before the broker's auto square-off and its ₹50 fee.
 - **holidays**: the NSE trading holidays as `"YYYY-MM-DD"` strings. The example ships with 2026. Each December, check NSE's list (nseindia.com/resources/exchange-communication-holidays) and add the next year's. Without them, a holiday looks like a trading day, and `market.py` warns when the current year has none.
 - **allow_short**, **allow_fno**, **allow_margin**: `false`. Phase 1 is cash equity, long only, by default.
+- **watchlist**: NSE symbol to the company name NSE files under, for example `"INFY": "Infosys Limited"`. nse-news, nse-results and nse-insider read it.
 
 ## Step 2: the broker connector
 
