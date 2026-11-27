@@ -1,0 +1,10 @@
+{
+  "name": "indian-stock-market",
+  "description": "Claude skills for intraday trading on NSE and BSE: scanner, announcements, entry and exit planning, a trade replayer, position sizing after Indian charges, and risk checks. Analysis only, paper first, never places orders.",
+  "version": "0.1.0",
+  "author": {"name": "rpragesh"},
+  "homepage": "https://github.com/rpragesh/indian-stock-market",
+  "repository": "https://github.com/rpragesh/indian-stock-market",
+  "keywords": ["claude-skills", "nse", "bse", "india", "day-trading", "intraday", "paper-trading", "groww", "zerodha"],
+  "skills": "./"
+}
