@@ -40,6 +40,7 @@ python3 "${CLAUDE_SKILL_DIR}/charges.py" --buy 1000 --qty 50 --breakeven  # exit
 | --- | --- |
 | `nse/config.json` | the user's rules (start from `config.example.json` in this folder) |
 | `${CLAUDE_SKILL_DIR}/brokers.json` | charge rates per broker and statutory charges, with sources and an as-of date |
+| `${CLAUDE_SKILL_DIR}/nselib.py` | shared helpers the other skills import: the `nse/` folder, ticks, order fingerprints, the paper journal |
 
 All user data lives in an `nse/` folder in the user's project. Every
 nse-* skill reads and writes there.
@@ -53,6 +54,7 @@ the defaults when they have no view.
 - **broker**: `groww` (default) or `zerodha`. This picks the charge table and the square-off time.
 - **paper**: stays `true` until the user explicitly says otherwise, in their own words, after paper results they trust. Never flip it on your own.
 - **paper_capital_inr**: the pretend money for paper trades (₹1,00,000).
+- **tick_size**: the price step orders round to (0.05). Check it on the exchange for low-priced stocks.
 - **max_loss_per_trade_inr**, **max_daily_loss_inr**, **max_trades_per_day**, **max_open_positions**, **max_position_pct**, **cash_buffer_pct**, **min_reward_risk**: the limits nse-budget and nse-risk enforce.
 - **no_entries_before** / **no_entries_after**: the entry window, IST (09:30 to 14:45). The first 15 minutes after the 09:15 open are noisy.
 - **square_off_time**: leave `null` to use the broker's time from `brokers.json`, or set it (for example `"15:20"`) when the broker changes it. **exit_buffer_minutes** (10) puts "flat by" that many minutes earlier, so we exit before the broker's auto square-off and its ₹50 fee.
