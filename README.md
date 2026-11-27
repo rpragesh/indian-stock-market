@@ -57,10 +57,10 @@ Needs Python 3.8 or newer. There is nothing to pip install.
 | `nse-risk` | PASS or BLOCK against your limits | ready |
 | `nse-exit` | Stop, target, and out before square-off | ready |
 | `nse-ticket` | An order ticket you place yourself in your broker's app | ready |
-| `nse-scanner` | Opening-range breakouts, flags and oversold bounces on NSE stocks | planned |
-| `nse-entry` | Watches a setup bar by bar | planned |
-| `nse-timemachine` | Replays the trade 10,000 times from recent candles | planned |
-| `nse-alerts` | Price, stop, target and square-off reminders | planned |
+| `nse-scanner` | Opening-range breakouts, flags and oversold bounces on NSE stocks | ready |
+| `nse-entry` | Watches a setup bar by bar | ready |
+| `nse-timemachine` | Replays the trade 10,000 times from recent candles | ready |
+| `nse-alerts` | Price, stop, target and square-off reminders | ready |
 | `nse-news` | NSE and BSE corporate announcements and headlines | planned |
 | `nse-results` | Quarterly results summary | planned |
 | `nse-insider` | Bulk and block deals, plus promoter and insider trades (SEBI PIT disclosures) | planned |
@@ -78,6 +78,20 @@ python3 nse-ticket/ticket.py today     # net P&L after charges, paper equity
 ```
 
 Or just ask Claude: "plan INFY at 1612.50 with the opening range 1596.20 to 1610".
+
+## With live data from Groww
+
+Ask Claude "scan for opening-range breakouts". It pulls a shortlist and
+today's 5-minute candles through the Groww connector, saves them under
+`nse/candles/`, and runs:
+
+```bash
+python3 nse-scanner/scan.py --write                          # ORB, flag and oversold-bounce hits
+python3 nse-entry/entry.py watch --symbol INFY --setup orb --write
+python3 nse-exit/exit.py plan --from-entry --target 2.5R --write
+python3 nse-timemachine/timemachine.py                       # 10,000 replays and every past trigger, after charges
+python3 nse-alerts/alerts.py check --ltp INFY=1171.5         # stop, target, flat-by and square-off reminders
+```
 
 ## Try the base layer
 

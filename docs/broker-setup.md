@@ -11,9 +11,11 @@ yours with `"broker"` in `nse/config.json`.
 3. Click **Connect** and log in to Groww in the browser window.
 4. In a new chat, try: "Show my Groww holdings".
 
-Groww calls its connector early-stage. It lists holdings, positions and
-daily candles. Whether it gives live quotes and intraday candles is not
-confirmed yet. The data skills will check this before relying on it.
+Checked on 27 Nov 2026: the connector gives live prices (`get_ltp`, up to
+50 names a call), bid/ask depth (`get_quotes_and_depth`), and OHLCV candles
+(`fetch_historical_candle_data`) at 1 to 240 minutes going back 90 days,
+and daily candles for 5 years. It also has screeners and market-mover lists
+that nse-scanner uses for a shortlist. Groww calls it early-stage.
 Source: [Groww MCP announcement](https://groww.in/updates/groww-mcp).
 
 ## Zerodha

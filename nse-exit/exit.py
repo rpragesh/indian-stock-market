@@ -122,9 +122,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="Plan the stop, target and flat-by time for a long intraday trade.")
     sub = ap.add_subparsers(dest="cmd", required=True)
     pl = sub.add_parser("plan")
-    pl.add_argument("--symbol", required=True)
-    pl.add_argument("--entry", type=float, required=True)
-    pl.add_argument("--stop", default="or-mid", help="or-mid, or-low, price:X or pct:X")
+    pl.add_argument("--from-entry", action="store_true", help="take symbol, entry, range and stop from nse/entry.json")
+    pl.add_argument("--symbol")
+    pl.add_argument("--entry", type=float)
+    pl.add_argument("--stop", default=None, help="or-mid (default), or-low, price:X or pct:X")
     pl.add_argument("--target", default="2R", help="2R, 1.5R, ... or price:X")
     pl.add_argument("--or-high", type=float)
     pl.add_argument("--or-low", type=float)
@@ -145,6 +146,23 @@ def main(argv=None):
         return 0
 
     cfg = nselib.config()
+    if a.from_entry:
+        e = nselib.read_json(nselib.path("entry.json"))
+        if not e or e.get("state") != "triggered":
+            print("REFUSED: no triggered setup in nse/entry.json: run nse-entry with --write first")
+            return 2
+        a.symbol = a.symbol or e["symbol"]
+        a.entry = a.entry if a.entry is not None else e["entry"]
+        a.setup = a.setup or e.get("setup")
+        if e.get("or_high") is not None:
+            a.or_high = a.or_high if a.or_high is not None else e["or_high"]
+            a.or_low = a.or_low if a.or_low is not None else e["or_low"]
+        if a.stop is None and e.get("stop_rule") not in ("or-mid", "or-low") and e.get("stop") is not None:
+            a.stop = "price:%s" % e["stop"]
+    if a.symbol is None or a.entry is None:
+        print("REFUSED: give --symbol and --entry, or --from-entry")
+        return 2
+    a.stop = a.stop or "or-mid"
     try:
         p = make_plan(cfg, a.symbol, a.entry, a.stop, a.target, a.or_high, a.or_low,
                       market.now_ist(a.now), a.setup)
